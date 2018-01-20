@@ -6,11 +6,13 @@ class App < Sinatra::Base
     set :session_secret, "secret"
   end
   get '/' do
+    @session = session
     erb :index
+
   end
   post '/checkout' do
     binding.pry
-    @session = session
+
     erb
   end
 end
